@@ -22,8 +22,10 @@ func execute(args string) string {
 
 func Test_ExecuteParticularCommandDynamically(t *testing.T) {
 
+	//run all the child command reside under root command
 	for _, child := range RootCmd.Commands() {
 
+		//check if args exist or not
 		childArgs, exists := child.Annotations["args"]
 		if exists {
 			actual := execute(childArgs)
