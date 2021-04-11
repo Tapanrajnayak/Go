@@ -12,8 +12,6 @@ import (
 func Test_ExecuteAnyCommand(t *testing.T) {
 	
 	actual := new(bytes.Buffer)
-	i := RootCmd
-	_ = i
 	RootCmd.SetOut(actual)
 	RootCmd.SetErr(actual)
 	RootCmd.SetArgs([]string{"A", "a1"})
